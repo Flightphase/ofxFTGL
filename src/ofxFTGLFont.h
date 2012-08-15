@@ -1,23 +1,28 @@
-#ifndef OFX_FTGLFONT_H
-#define OFX_FTGLFONT_H
+
+
+#pragma once
 
 #include "ofMain.h"
 #include <FTGL/ftgl.h>
 
 class ofxFTGLFont {
 
-public:
-
+  public:
+	ofxFTGLFont();
+    ~ofxFTGLFont();
 	bool 		loadFont(string filename, float fontsize = 10, bool _bAntiAliased = false, bool _bFullCharacterSet = false, bool makeContours = false);
+    bool 		isLoaded();
+    
 	void 		setSize(int size);
-  	void 		setLineHeight(float height);
-
+	float 		getLineHeight();
+    void		setLineHeight(float newHeight);
 	ofRectangle getStringBoundingBox(string s, float x, float y);
 
 	void 		drawString(string s, float x, float y);
 
-    //FTSimpleLayout layout;
     FTFont*  font;
+  protected:
+    bool loaded;
+    float lineHeight;
 };
 
-#endif
