@@ -2,7 +2,7 @@
 *.pbxuser
 *.xcworkspace
 xcuserdata/
-xcsharedata/
+xcshareddata/
 
 build/
 obj/
