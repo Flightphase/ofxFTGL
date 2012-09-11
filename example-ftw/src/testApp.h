@@ -59,7 +59,7 @@ class testApp : public ofBaseApp{
 	void gotMessage(ofMessage msg);
 
 	ofxFTGLFont font;
-	string str;
+	wstring str;
 	
 	vector<ofVec2f> points;
 };

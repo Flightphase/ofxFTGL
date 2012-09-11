@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  ofxWordPalette
  *
  * Created by James George, http://www.jamesgeorge.org @ Flightphase http://www.flightphase.com 
@@ -45,8 +45,8 @@ void testApp::setup(){
 	ofSetVerticalSync(true);
 	
 	ofEnableAlphaBlending();
-	str = "FTGL FTW";
-	font.loadFont("verdana.ttf", ofGetHeight(), true);
+	str = L"はじめまして ᕙ(⇀‸↼‶)ᕗ";
+	font.loadFont("Cyberbit.ttf", ofGetHeight(), true);
 	ofSetWindowShape(1024, font.getStringBoundingBox(str, 0, 0).height);
 }
 

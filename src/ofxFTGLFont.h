@@ -16,9 +16,9 @@ class ofxFTGLFont {
 	void 		setSize(int size);
 	float 		getLineHeight();
     void		setLineHeight(float newHeight);
-	ofRectangle getStringBoundingBox(string s, float x, float y);
+	ofRectangle getStringBoundingBox(wstring s, float x, float y);
 
-	void 		drawString(string s, float x, float y);
+	void 		drawString(wstring s, float x, float y);
 
     FTFont*  font;
   protected:
