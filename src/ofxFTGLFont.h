@@ -3,7 +3,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include <FTGL/ftgl.h>
+#include "ftgl.h"
 
 class ofxFTGLFont {
 
