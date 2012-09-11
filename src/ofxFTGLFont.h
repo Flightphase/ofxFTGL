@@ -10,7 +10,7 @@ class ofxFTGLFont {
   public:
 	ofxFTGLFont();
     ~ofxFTGLFont();
-	bool 		loadFont(string filename, float fontsize = 10, bool _bAntiAliased = false, bool _bFullCharacterSet = false, bool makeContours = false);
+	bool 		loadFont(string filename, float fontsize = 10, bool _bAntiAliased = false, bool _bFullCharacterSet = false, bool makeContours = false, float simplifyAmnt = 0, int dpi = 72);
     bool 		isLoaded();
     
 	void 		setSize(int size);
@@ -21,7 +21,9 @@ class ofxFTGLFont {
 
 	void 		drawString(wstring s, float x, float y);
 	void 		drawString(string s, float x, float y);
-
+	float 		stringHeight(string c);
+	float 		stringWidth(string c);
+	
     FTFont*  font;
   protected:
     bool loaded;

@@ -11,7 +11,7 @@ ofxFTGLFont::~ofxFTGLFont(){
     }
 }
 
-bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, bool _bFullCharacterSet, bool makeContours){
+bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, bool _bFullCharacterSet, bool makeContours, float simplifyAmnt, int dpi){
 
     font = new FTTextureFont(ofToDataPath(filename).c_str());
 	lineHeight = fontsize * 1.43f;
@@ -34,6 +34,16 @@ bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, 
     
     loaded = true;
     return true;
+}
+
+float ofxFTGLFont::stringWidth(string c){
+    ofRectangle rect = getStringBoundingBox(c, 0,0);
+    return rect.width;
+}
+
+float ofxFTGLFont::stringHeight(string c) {
+    ofRectangle rect = getStringBoundingBox(c, 0,0);
+    return rect.height;
 }
 
 bool ofxFTGLFont::isLoaded(){
@@ -75,6 +85,7 @@ void ofxFTGLFont::drawString(string s, float x, float y){
     glPushMatrix();
     glTranslatef(x, y, 0);
     glScalef(1,-1,1);
+
     font->Render(s.c_str());
     glPopMatrix();
 }
