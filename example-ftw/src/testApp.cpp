@@ -1,10 +1,4 @@
 /*
- *  ofxWordPalette
- *
- * Created by James George, http://www.jamesgeorge.org @ Flightphase http://www.flightphase.com
- * for the National Maritime Musuem
- * requires ofxFTGL : https://github.com/Flightphase/ofxFTGL
- *
  **********************************************************
  *
  * Permission is hereby granted, free of charge, to any person
@@ -29,11 +23,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * ----------------------
- * ofxWordPalette lets you draw lots and lots of text efficiently by rendering
- * a set number of words once into an FBO and then drawing them as textures
+ * ofxFTGL is by Rick Companje
  *
- * ofxWordPalette also has helper functions to do fun stuff involving the length
- * of words
+ * example and static libs by obviousjim
+ *
  */
 
 #include "testApp.h"
