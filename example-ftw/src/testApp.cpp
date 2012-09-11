@@ -45,8 +45,8 @@ void testApp::setup(){
 	ofSetVerticalSync(true);
 	
 	ofEnableAlphaBlending();
-	str = L"初音ミク";
-	font.loadFont("Cyberbit.ttf", ofGetHeight(), true);
+	str = "初音ミク";
+	font.loadFont("AxisStd-Regular.otf", ofGetHeight(), true);
 	ofSetWindowShape(1024, font.getStringBoundingBox(str, 0, 0).height);
 }
 
