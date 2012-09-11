@@ -6,16 +6,17 @@ ofxFTGLFont::ofxFTGLFont(){
 }
 
 ofxFTGLFont::~ofxFTGLFont(){
-    if(loaded){
-//        delete font;
+	if(font != NULL){
+        //delete font;
     }
 }
 
 bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, bool _bFullCharacterSet, bool makeContours, float simplifyAmnt, int dpi){
-
+	fontsize *= 2;
     font = new FTTextureFont(ofToDataPath(filename).c_str());
-	lineHeight = fontsize * 1.43f;
-    
+//	lineHeight = fontsize * 1.43f;
+  	lineHeight = fontsize;
+  
     font->Outset(0.0f, fontsize);
 
     font->CharMap(ft_encoding_unicode);
@@ -59,7 +60,6 @@ void ofxFTGLFont::setSize(int size){
 float ofxFTGLFont::getLineHeight(){
 	return lineHeight;
 }
-    
 
 void ofxFTGLFont::setLineHeight(float newHeight){
     lineHeight = newHeight;
