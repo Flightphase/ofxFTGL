@@ -1,7 +1,7 @@
-﻿/*
+/*
  *  ofxWordPalette
  *
- * Created by James George, http://www.jamesgeorge.org @ Flightphase http://www.flightphase.com 
+ * Created by James George, http://www.jamesgeorge.org @ Flightphase http://www.flightphase.com
  * for the National Maritime Musuem
  * requires ofxFTGL : https://github.com/Flightphase/ofxFTGL
  *
@@ -41,18 +41,18 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
-	ofSetFrameRate(30);	
+	ofSetFrameRate(30);
 	ofSetVerticalSync(true);
 	
 	ofEnableAlphaBlending();
-	str = L"はじめまして ᕙ(⇀‸↼‶)ᕗ";
+	str = L"初音ミク";
 	font.loadFont("Cyberbit.ttf", ofGetHeight(), true);
 	ofSetWindowShape(1024, font.getStringBoundingBox(str, 0, 0).height);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+	
 }
 
 //--------------------------------------------------------------
@@ -64,45 +64,45 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y ){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
-
+	
 }
 
 //--------------------------------------------------------------
 void testApp::gotMessage(ofMessage msg){
-
+	
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
+void testApp::dragEvent(ofDragInfo dragInfo){
+	
 }
