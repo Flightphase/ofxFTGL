@@ -39,7 +39,7 @@ void testApp::setup(){
 	
 	ofEnableAlphaBlending();
 	str = "初音ミク";
-	font.loadFont("AxisStd-Regular.otf", ofGetHeight(), true);
+	font.loadFont("mplus-1c-regular.ttf", ofGetHeight(), true);
 	ofSetWindowShape(1024, font.getStringBoundingBox(str, 0, 0).height);
 }
 
@@ -52,7 +52,7 @@ void testApp::update(){
 void testApp::draw(){
 	ofBackground(255);
 	ofSetColor(0);
-	font.drawString(str, ofGetWidth() - ( (ofGetFrameNum()*30) % int(font.getStringBoundingBox(str, 0,0).width + ofGetWidth())), ofGetHeight());
+	font.drawString(str, ofGetWidth() - ( (ofGetFrameNum()*70) % int(font.getStringBoundingBox(str, 0,0).width + ofGetWidth())), ofGetHeight());
 }
 
 //--------------------------------------------------------------
