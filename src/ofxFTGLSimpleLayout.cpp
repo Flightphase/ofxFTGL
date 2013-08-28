@@ -44,6 +44,7 @@ bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, bool _bAntiA
 
 bool ofxFTGLSimpleLayout::setLineLength(float l){
     layout->SetLineLength(l);
+    return true;
 }
 
 float ofxFTGLSimpleLayout::stringWidth(string c){
