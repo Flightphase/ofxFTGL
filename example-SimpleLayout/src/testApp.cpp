@@ -31,8 +31,25 @@ void testApp::draw(){
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
-
+void testApp::keyPressed(int key)
+{
+    switch (key) {
+        case '1':
+            layout.setAlignment(FTGL_ALIGN_LEFT);
+            break;
+        case '2':
+            layout.setAlignment(FTGL_ALIGN_CENTER);
+            break;
+        case '3':
+            layout.setAlignment(FTGL_ALIGN_RIGHT);
+            break;
+        case '4':
+            layout.setAlignment(FTGL_ALIGN_JUSTIFY);
+            break;
+            
+        default:
+            break;
+    }
 }
 
 //--------------------------------------------------------------

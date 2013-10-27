@@ -87,6 +87,16 @@ void ofxFTGLSimpleLayout::setLineSpacing(float spacing)
     layout->SetLineSpacing(spacing);
 }
 
+ofxFTGLTextAlignment ofxFTGLSimpleLayout::getAlignment() const
+{
+    return layout->GetAlignment();
+}
+
+void ofxFTGLSimpleLayout::setAlignment(ofxFTGLTextAlignment alignment)
+{
+    layout->SetAlignment(alignment);
+}
+
 ofRectangle ofxFTGLSimpleLayout::getStringBoundingBox(string s, float x, float y){
     if(loaded){
     	FTBBox bbox = layout->BBox(s.c_str());

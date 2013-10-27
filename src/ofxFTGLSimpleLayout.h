@@ -5,6 +5,13 @@
 #include "ofMain.h"
 #include "ftgl.h"
 
+typedef	FTGL::TextAlignment ofxFTGLTextAlignment;
+
+#define FTGL_ALIGN_LEFT     FTGL::ALIGN_LEFT
+#define FTGL_ALIGN_CENTER   FTGL::ALIGN_CENTER
+#define FTGL_ALIGN_RIGHT    FTGL::ALIGN_RIGHT
+#define FTGL_ALIGN_JUSTIFY  FTGL::ALIGN_JUSTIFY
+
 class ofxFTGLSimpleLayout {
 
   public:
@@ -28,6 +35,10 @@ class ofxFTGLSimpleLayout {
     void        setLineLength(float length);
 	float       getLineSpacing() const;
     void		setLineSpacing(float spacing);
+    
+    ofxFTGLTextAlignment getAlignment() const;
+    void setAlignment(ofxFTGLTextAlignment alignment);
+    
 	
     FTFont*  font;
     FTSimpleLayout* layout;
