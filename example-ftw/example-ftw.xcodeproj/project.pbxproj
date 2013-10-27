@@ -460,7 +460,7 @@
 					"$(OF_CORE_LIBS)",
 					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
 				);
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -505,7 +505,7 @@
 					"$(OF_CORE_LIBS)",
 					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
 				);
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -594,7 +594,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../libs/FTGL/lib/osx\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -683,7 +683,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../libs/FTGL/lib/osx\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
