@@ -16,8 +16,6 @@ class ofxFTGLSimpleLayout {
     bool 		isLoaded();
     
 	void 		setSize(int size);
-	float 		getLineHeight();
-    void		setLineHeight(float newHeight);
 	ofRectangle getStringBoundingBox(wstring s, float x, float y);
 	ofRectangle getStringBoundingBox(string s, float x, float y);
 
@@ -25,13 +23,16 @@ class ofxFTGLSimpleLayout {
 	void 		drawString(string s, float x, float y);
 	float 		stringHeight(string c);
 	float 		stringWidth(string c);
-    bool        setLineLength(float l);
+   
+    float       getLineLength() const;
+    void        setLineLength(float length);
+	float       getLineSpacing() const;
+    void		setLineSpacing(float spacing);
 	
     FTFont*  font;
     FTSimpleLayout* layout;
     
   protected:
     bool loaded;
-    float lineHeight;
 };
 

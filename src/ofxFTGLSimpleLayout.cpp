@@ -15,9 +15,7 @@ bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, bool _bAntiA
 	fontsize *= 2;
     layout = new FTSimpleLayout();
     font = new FTTextureFont(ofToDataPath(filename).c_str());
-//	lineHeight = fontsize * 1.43f;
-  	lineHeight = fontsize;
-  
+      
     font->Outset(0.0f, fontsize);
 
     font->CharMap(ft_encoding_unicode);
@@ -37,15 +35,10 @@ bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, bool _bAntiA
     loaded = true;
     
     layout->SetFont(font);
-    
+        
     return true;
 }
 
-
-bool ofxFTGLSimpleLayout::setLineLength(float l){
-    layout->SetLineLength(l);
-    return true;
-}
 
 float ofxFTGLSimpleLayout::stringWidth(string c){
     if (c.compare(" ") == 0) {
@@ -74,12 +67,24 @@ void ofxFTGLSimpleLayout::setSize(int size){
     }
 }
 
-float ofxFTGLSimpleLayout::getLineHeight(){
-	return lineHeight;
+float ofxFTGLSimpleLayout::getLineLength() const
+{
+	return layout->GetLineLength();
 }
 
-void ofxFTGLSimpleLayout::setLineHeight(float newHeight){
-    lineHeight = newHeight;
+void ofxFTGLSimpleLayout::setLineLength(float length)
+{
+    layout->SetLineLength(length);
+}
+
+float ofxFTGLSimpleLayout::getLineSpacing() const
+{
+	return layout->GetLineSpacing();
+}
+
+void ofxFTGLSimpleLayout::setLineSpacing(float spacing)
+{
+    layout->SetLineSpacing(spacing);
 }
 
 ofRectangle ofxFTGLSimpleLayout::getStringBoundingBox(string s, float x, float y){
