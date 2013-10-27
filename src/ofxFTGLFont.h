@@ -10,9 +10,8 @@ class ofxFTGLFont {
   public:
 	ofxFTGLFont();
     ~ofxFTGLFont();
-	//the last parameters don't do anything, but are left in so that ofxFTGLFont
-	//can be dropped in in place of ofTrueTypeFont without compiler errors
-	bool 		loadFont(string filename, float fontsize = 10, float depth = 0);
+	
+    bool 		loadFont(string filename, float fontsize = 10, float depth = 0);
     bool 		isLoaded();
     
 	void 		setSize(int size);

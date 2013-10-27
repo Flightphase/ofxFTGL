@@ -11,13 +11,20 @@ ofxFTGLSimpleLayout::~ofxFTGLSimpleLayout(){
     }
 }
 
-bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, bool _bAntiAliased, bool _bFullCharacterSet, bool makeContours, float simplifyAmnt, int dpi){
+bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth)
+{
 	fontsize *= 2;
+    
     layout = new FTSimpleLayout();
-    font = new FTTextureFont(ofToDataPath(filename).c_str());
-      
-    font->Outset(0.0f, fontsize);
-
+    
+    if (depth != 0) {
+        font = new FTExtrudeFont(ofToDataPath(filename).c_str());
+        font->Depth(depth);
+    }
+    else {
+        font = new FTTextureFont(ofToDataPath(filename).c_str());
+    }
+    
     font->CharMap(ft_encoding_unicode);
 
     if(font->Error()){
