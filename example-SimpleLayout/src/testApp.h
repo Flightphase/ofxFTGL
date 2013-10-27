@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxFTGLSimpleLayout.h"
+#include "ofxFTGL.h"
 
 class testApp : public ofBaseApp{
 	public:
