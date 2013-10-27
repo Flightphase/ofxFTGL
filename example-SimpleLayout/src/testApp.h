@@ -19,8 +19,7 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofxFTGLSimpleLayout layout;
-	string str;
-	
-	vector<ofVec2f> points;
+        ofxFTGLSimpleLayout layout;
+        int margin;
+        string str;
 };

@@ -8,25 +8,25 @@ void testApp::setup(){
 	
 	ofEnableAlphaBlending();
     
-    layout.loadFont("mplus-1c-regular.ttf", 12, true);
+    margin = 20;
     
     // layout will wrap your text depending on the line length you set, or when you insert line breaks into the text manually (\n)
-    
-    layout.setLineLength(ofGetWidth() - 200);
+    layout.loadFont("mplus-1c-regular.ttf", 12, true);
+    layout.setLineLength(ofGetWidth() - margin * 2);
     
 	str = "初音ミク. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida quam ut aliquet rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris ornare felis vitae enim fringilla, at pulvinar quam venenatis.\n \nSed facilisis malesuada nisi vitae gravida. Sed id nulla sit amet dolor luctus dignissim vel sit amet augue. Integer mi dolor, cursus non felis vitae, euismod sollicitudin enim. Suspendisse turpis orci, rhoncus eu metus eget, semper ornare purus. Donec quam tellus, varius a ligula vel, dignissim blandit dolor. Duis rutrum nisl felis, in tempor nulla gravida vitae.";
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    layout.setLineLength(MAX(margin * 2, ofGetMouseX() - margin * 2));
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 	ofBackground(255);
 	ofSetColor(0);
-	layout.drawString(str, 100, 100);
+	layout.drawString(str, margin, 100);
 }
 
 //--------------------------------------------------------------
