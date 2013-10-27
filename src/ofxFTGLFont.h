@@ -27,8 +27,8 @@ class ofxFTGLFont {
 	float 		stringWidth(string c);
 	
     FTFont*  font;
+    
   protected:
     bool loaded;
-    float lineHeight;
 };
 
