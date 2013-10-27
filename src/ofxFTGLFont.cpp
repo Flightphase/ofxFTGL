@@ -11,12 +11,18 @@ ofxFTGLFont::~ofxFTGLFont(){
     }
 }
 
-bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, bool _bFullCharacterSet, bool makeContours, float simplifyAmnt, int dpi){
+bool ofxFTGLFont::loadFont(string filename, float fontsize, float depth)
+{
 	fontsize *= 2;
-    font = new FTTextureFont(ofToDataPath(filename).c_str());
-  
-    font->Outset(0.0f, fontsize);
-
+    
+    if (depth != 0) {
+        font = new FTExtrudeFont(ofToDataPath(filename).c_str());
+        font->Depth(depth);
+    }
+    else {
+        font = new FTTextureFont(ofToDataPath(filename).c_str());
+    }
+    
     font->CharMap(ft_encoding_unicode);
 
     if(font->Error()){
@@ -35,7 +41,8 @@ bool ofxFTGLFont::loadFont(string filename, float fontsize, bool _bAntiAliased, 
     return true;
 }
 
-float ofxFTGLFont::stringWidth(string c){
+float ofxFTGLFont::stringWidth(string c)
+{
     if (c.compare(" ") == 0) {
         // FTGL won't measure a space width properly, so we
         // have to use this hack to get that value.
