@@ -66,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6449BF03181D8C7000E27EFB /* ofxFTGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxFTGL.h; sourceTree = "<group>"; };
 		6F951BA017CCD0D900B4213F /* FTBBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBBox.h; sourceTree = "<group>"; };
 		6F951BA117CCD0D900B4213F /* FTBitmapGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBitmapGlyph.h; sourceTree = "<group>"; };
 		6F951BA217CCD0D900B4213F /* FTBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTBuffer.h; sourceTree = "<group>"; };
@@ -268,6 +269,7 @@
 		6F951BC117CCD0D900B4213F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6449BF03181D8C7000E27EFB /* ofxFTGL.h */,
 				6FD7A71C17CDEB6F00CC92E0 /* ofxFTGLSimpleLayout.cpp */,
 				6FD7A71D17CDEB6F00CC92E0 /* ofxFTGLSimpleLayout.h */,
 				6F951BC217CCD0D900B4213F /* ofxFTGLFont.cpp */,
