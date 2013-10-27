@@ -48,8 +48,15 @@ bool ofxFTGLSimpleLayout::setLineLength(float l){
 }
 
 float ofxFTGLSimpleLayout::stringWidth(string c){
-    ofRectangle rect = getStringBoundingBox(c, 0,0);
-    return rect.width;
+    if (c.compare(" ") == 0) {
+        // FTGL won't measure a space width properly, so we
+        // have to use this hack to get that value.
+        return (stringWidth("A A") - stringWidth("AA"));
+    }
+    else {
+        ofRectangle rect = getStringBoundingBox(c, 0,0);
+        return rect.width;
+    }
 }
 
 float ofxFTGLSimpleLayout::stringHeight(string c) {
