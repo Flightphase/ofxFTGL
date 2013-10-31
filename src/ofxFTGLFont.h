@@ -11,7 +11,7 @@ class ofxFTGLFont {
 	ofxFTGLFont();
     ~ofxFTGLFont();
 	
-    bool 		loadFont(string filename, float fontsize = 10, float depth = 0);
+    bool 		loadFont(string filename, float fontsize, float depth = 0, bool bUsePolygons = false);
     bool 		isLoaded();
     
 	void 		setSize(int size);

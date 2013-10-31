@@ -11,7 +11,7 @@ ofxFTGLSimpleLayout::~ofxFTGLSimpleLayout(){
     }
 }
 
-bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth)
+bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth, bool bUsePolygons)
 {
 	fontsize *= 2;
     
@@ -20,6 +20,9 @@ bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth)
     if (depth != 0) {
         font = new FTExtrudeFont(ofToDataPath(filename).c_str());
         font->Depth(depth);
+    }
+    else if (bUsePolygons) {
+        font = new FTPolygonFont(ofToDataPath(filename).c_str());
     }
     else {
         font = new FTTextureFont(ofToDataPath(filename).c_str());
