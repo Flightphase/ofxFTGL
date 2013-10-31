@@ -18,6 +18,7 @@ class ofxFTGLSimpleLayout {
 	ofxFTGLSimpleLayout();
     ~ofxFTGLSimpleLayout();
 	
+    void        unload();
     bool 		loadFont(string filename, float fontsize = 10, float depth = 0, bool bUsePolygons = false);
     bool 		isLoaded();
     

@@ -1,19 +1,36 @@
 #include "ofxFTGLSimpleLayout.h"
 
-ofxFTGLSimpleLayout::ofxFTGLSimpleLayout(){
+ofxFTGLSimpleLayout::ofxFTGLSimpleLayout()
+{
     loaded = false;
     font = NULL;
+    layout = NULL;
 }
 
-ofxFTGLSimpleLayout::~ofxFTGLSimpleLayout(){
-	if(font != NULL){
-        //delete font;
+ofxFTGLSimpleLayout::~ofxFTGLSimpleLayout()
+{
+//	unload();
+}
+
+void ofxFTGLSimpleLayout::unload()
+{
+    if (font != NULL) {
+        delete font;
+        font = NULL;
     }
+    if (layout != NULL) {
+        delete layout;
+        layout = NULL;
+    }
+    
+    loaded = false;
 }
 
 bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth, bool bUsePolygons)
 {
-	fontsize *= 2;
+	unload();
+    
+    fontsize *= 2;
     
     layout = new FTSimpleLayout();
     
@@ -50,7 +67,8 @@ bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth,
 }
 
 
-float ofxFTGLSimpleLayout::stringWidth(string c){
+float ofxFTGLSimpleLayout::stringWidth(string c)
+{
     if (c.compare(" ") == 0) {
         // FTGL won't measure a space width properly, so we
         // have to use this hack to get that value.

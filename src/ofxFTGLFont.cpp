@@ -1,19 +1,31 @@
 #include "ofxFTGLFont.h"
 
-ofxFTGLFont::ofxFTGLFont(){
+ofxFTGLFont::ofxFTGLFont()
+{
     loaded = false;
     font = NULL;
 }
 
-ofxFTGLFont::~ofxFTGLFont(){
-	if(font != NULL){
-        //delete font;
+ofxFTGLFont::~ofxFTGLFont()
+{
+//	unload();
+}
+
+void ofxFTGLFont::unload()
+{
+    if (font != NULL) {
+        delete font;
+        font = NULL;
     }
+    
+    loaded = false;
 }
 
 bool ofxFTGLFont::loadFont(string filename, float fontsize, float depth, bool bUsePolygons)
 {
-	fontsize *= 2;
+	unload();
+    
+    fontsize *= 2;
     
     if (depth != 0) {
         font = new FTExtrudeFont(ofToDataPath(filename).c_str());
