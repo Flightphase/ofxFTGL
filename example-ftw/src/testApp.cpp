@@ -39,7 +39,7 @@ void testApp::setup(){
 	
 	ofEnableAlphaBlending();
 	str = "初音ミク";
-	font.loadFont("mplus-1c-regular.ttf", ofGetHeight(), true);
+	font.loadFont("mplus-1c-regular.ttf", ofGetHeight());
 	ofSetWindowShape(1024, font.getStringBoundingBox(str, 0, 0).height);
 }
 

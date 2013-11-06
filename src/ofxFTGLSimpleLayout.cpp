@@ -1,31 +1,38 @@
-#include "ofxFTGLFont.h"
+#include "ofxFTGLSimpleLayout.h"
 
-ofxFTGLFont::ofxFTGLFont()
+ofxFTGLSimpleLayout::ofxFTGLSimpleLayout()
 {
     loaded = false;
     font = NULL;
+    layout = NULL;
 }
 
-ofxFTGLFont::~ofxFTGLFont()
+ofxFTGLSimpleLayout::~ofxFTGLSimpleLayout()
 {
 //	unload();
 }
 
-void ofxFTGLFont::unload()
+void ofxFTGLSimpleLayout::unload()
 {
     if (font != NULL) {
         delete font;
         font = NULL;
     }
+    if (layout != NULL) {
+        delete layout;
+        layout = NULL;
+    }
     
     loaded = false;
 }
 
-bool ofxFTGLFont::loadFont(string filename, float fontsize, float depth, bool bUsePolygons)
+bool ofxFTGLSimpleLayout::loadFont(string filename, float fontsize, float depth, bool bUsePolygons)
 {
 	unload();
     
     fontsize *= 2;
+    
+    layout = new FTSimpleLayout();
     
     if (depth != 0) {
         font = new FTExtrudeFont(ofToDataPath(filename).c_str());
@@ -53,10 +60,14 @@ bool ofxFTGLFont::loadFont(string filename, float fontsize, float depth, bool bU
     }
     
     loaded = true;
+    
+    layout->SetFont(font);
+        
     return true;
 }
 
-float ofxFTGLFont::stringWidth(string c)
+
+float ofxFTGLSimpleLayout::stringWidth(string c)
 {
     if (c.compare(" ") == 0) {
         // FTGL won't measure a space width properly, so we
@@ -69,50 +80,80 @@ float ofxFTGLFont::stringWidth(string c)
     }
 }
 
-float ofxFTGLFont::stringHeight(string c) {
+float ofxFTGLSimpleLayout::stringHeight(string c) {
     ofRectangle rect = getStringBoundingBox(c, 0,0);
     return rect.height;
 }
 
-bool ofxFTGLFont::isLoaded(){
+bool ofxFTGLSimpleLayout::isLoaded(){
     return loaded;
 }
 
-void ofxFTGLFont::setSize(int size){
+void ofxFTGLSimpleLayout::setSize(int size){
     if(loaded){
 	    font->FaceSize(size);
     }
 }
 
-ofRectangle ofxFTGLFont::getStringBoundingBox(string s, float x, float y){
+float ofxFTGLSimpleLayout::getLineLength() const
+{
+	return layout->GetLineLength();
+}
+
+void ofxFTGLSimpleLayout::setLineLength(float length)
+{
+    layout->SetLineLength(length);
+}
+
+float ofxFTGLSimpleLayout::getLineSpacing() const
+{
+	return layout->GetLineSpacing();
+}
+
+void ofxFTGLSimpleLayout::setLineSpacing(float spacing)
+{
+    layout->SetLineSpacing(spacing);
+}
+
+ofxFTGLTextAlignment ofxFTGLSimpleLayout::getAlignment() const
+{
+    return layout->GetAlignment();
+}
+
+void ofxFTGLSimpleLayout::setAlignment(ofxFTGLTextAlignment alignment)
+{
+    layout->SetAlignment(alignment);
+}
+
+ofRectangle ofxFTGLSimpleLayout::getStringBoundingBox(string s, float x, float y){
     if(loaded){
-    	FTBBox bbox = font->BBox(s.c_str());
+    	FTBBox bbox = layout->BBox(s.c_str());
 	    return ofRectangle(x + bbox.Lower().Xf(), y + bbox.Lower().Yf(), bbox.Upper().Xf(), bbox.Upper().Yf());
     }
 	return ofRectangle();
 }
 
-ofRectangle ofxFTGLFont::getStringBoundingBox(wstring s, float x, float y){
+ofRectangle ofxFTGLSimpleLayout::getStringBoundingBox(wstring s, float x, float y){
     if(loaded){
-    	FTBBox bbox = font->BBox((wchar_t*)s.c_str());
+    	FTBBox bbox = layout->BBox((wchar_t*)s.c_str());
 	    return ofRectangle(x + bbox.Lower().Xf(), y + bbox.Lower().Yf(), bbox.Upper().Xf(), bbox.Upper().Yf());
     }
 	return ofRectangle();
 }
 
-void ofxFTGLFont::drawString(string s, float x, float y){
+void ofxFTGLSimpleLayout::drawString(string s, float x, float y){
     glPushMatrix();
     glTranslatef(x, y, 0);
     glScalef(1,-1,1);
 
-    font->Render(s.c_str());
+    layout->Render(s.c_str());
     glPopMatrix();
 }
 
-void ofxFTGLFont::drawString(wstring s, float x, float y){
+void ofxFTGLSimpleLayout::drawString(wstring s, float x, float y){
     glPushMatrix();
     glTranslatef(x, y, 0);
     glScalef(1,-1,1);
-    font->Render((wchar_t*)s.c_str());
+    layout->Render((wchar_t*)s.c_str());
     glPopMatrix();
 }
