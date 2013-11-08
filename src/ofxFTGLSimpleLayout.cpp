@@ -95,6 +95,38 @@ void ofxFTGLSimpleLayout::setSize(int size){
     }
 }
 
+float ofxFTGLSimpleLayout::getLineHeight() const
+{
+    if (loaded) {
+        return font->LineHeight();
+    }
+    return 0;
+}
+
+float ofxFTGLSimpleLayout::getAscender() const
+{
+    if (loaded) {
+        return font->Ascender();
+    }
+    return 0;
+}
+
+float ofxFTGLSimpleLayout::getDescender() const
+{
+    if (loaded) {
+        return font->Descender();
+    }
+    return 0;
+}
+
+float ofxFTGLSimpleLayout::getXHeight() const
+{
+    if (loaded) {
+        return font->LineHeight() - font->Ascender() - font->Descender();
+    }
+    return 0;
+}
+
 float ofxFTGLSimpleLayout::getLineLength() const
 {
 	return layout->GetLineLength();

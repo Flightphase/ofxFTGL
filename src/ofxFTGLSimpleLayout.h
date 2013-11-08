@@ -23,6 +23,12 @@ class ofxFTGLSimpleLayout {
     bool 		isLoaded();
     
 	void 		setSize(int size);
+    
+    float       getLineHeight() const;
+    float       getAscender() const;
+    float       getDescender() const;
+    float       getXHeight() const;
+    
 	ofRectangle getStringBoundingBox(wstring s, float x, float y);
 	ofRectangle getStringBoundingBox(string s, float x, float y);
 
