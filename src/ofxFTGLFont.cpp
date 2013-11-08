@@ -84,6 +84,38 @@ void ofxFTGLFont::setSize(int size){
     }
 }
 
+float ofxFTGLFont::getLineHeight() const
+{
+    if (loaded) {
+        return font->LineHeight();
+    }
+    return 0;
+}
+
+float ofxFTGLFont::getAscender() const
+{
+    if (loaded) {
+        return font->Ascender();
+    }
+    return 0;
+}
+
+float ofxFTGLFont::getDescender() const
+{
+    if (loaded) {
+        return font->Descender();
+    }
+    return 0;
+}
+
+float ofxFTGLFont::getXHeight() const
+{
+    if (loaded) {
+        return font->LineHeight() - font->Ascender() - font->Descender();
+    }
+    return 0;
+}
+
 ofRectangle ofxFTGLFont::getStringBoundingBox(string s, float x, float y){
     if(loaded){
     	FTBBox bbox = font->BBox(s.c_str());

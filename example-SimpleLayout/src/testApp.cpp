@@ -18,7 +18,7 @@ void testApp::setup()
     layoutInfo.loadFont("mplus-1c-regular.ttf", 8);
     layoutInfo.setLineLength(ofGetWidth() - margin * 2);
     
-    layoutText.loadFont("mplus-1c-regular.ttf", 12, true);
+    layoutText.loadFont("mplus-1c-regular.ttf", 12);
     layoutText.setLineLength(ofGetWidth() - margin * 2);
     
 	str = "初音ミク. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida quam ut aliquet rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris ornare felis vitae enim fringilla, at pulvinar quam venenatis.\n \nSed facilisis malesuada nisi vitae gravida. Sed id nulla sit amet dolor luctus dignissim vel sit amet augue. Integer mi dolor, cursus non felis vitae, euismod sollicitudin enim. Suspendisse turpis orci, rhoncus eu metus eget, semper ornare purus. Donec quam tellus, varius a ligula vel, dignissim blandit dolor. Duis rutrum nisl felis, in tempor nulla gravida vitae.";
