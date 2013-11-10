@@ -1,9 +1,8 @@
-
-
 #pragma once
 
 #include "ofMain.h"
 #include "ftgl.h"
+#include "ofxFTGLFont.h"
 
 typedef	FTGL::TextAlignment ofxFTGLTextAlignment;
 
@@ -12,44 +11,30 @@ typedef	FTGL::TextAlignment ofxFTGLTextAlignment;
 #define FTGL_ALIGN_RIGHT    FTGL::ALIGN_RIGHT
 #define FTGL_ALIGN_JUSTIFY  FTGL::ALIGN_JUSTIFY
 
-class ofxFTGLSimpleLayout {
+class ofxFTGLSimpleLayout
+: public ofxFTGLFont
+{
+    public:
+        ofxFTGLSimpleLayout();
+        ~ofxFTGLSimpleLayout();
 
-  public:
-	ofxFTGLSimpleLayout();
-    ~ofxFTGLSimpleLayout();
-	
-    void        unload();
-    bool 		loadFont(string filename, float fontsize = 10, float depth = 0, bool bUsePolygons = false);
-    bool 		isLoaded();
-    
-	void 		setSize(int size);
-    
-    float       getLineHeight() const;
-    float       getAscender() const;
-    float       getDescender() const;
-    float       getXHeight() const;
-    
-	ofRectangle getStringBoundingBox(wstring s, float x, float y);
-	ofRectangle getStringBoundingBox(string s, float x, float y);
+        void unload();
+        bool loadFont(string filename, float fontsize = 10, float depth = 0, bool bUsePolygons = false);
 
-	void 		drawString(wstring s, float x, float y);
-	void 		drawString(string s, float x, float y);
-	float 		stringHeight(string c);
-	float 		stringWidth(string c);
-   
-    float       getLineLength() const;
-    void        setLineLength(float length);
-	float       getLineSpacing() const;
-    void		setLineSpacing(float spacing);
+        ofRectangle getStringBoundingBox(wstring s, float x, float y);
+        ofRectangle getStringBoundingBox(string s, float x, float y);
     
-    ofxFTGLTextAlignment getAlignment() const;
-    void setAlignment(ofxFTGLTextAlignment alignment);
-    
-	
-    FTFont*  font;
-    FTSimpleLayout* layout;
-    
-  protected:
-    bool loaded;
+        void drawString(wstring s, float x, float y);
+        void drawString(string s, float x, float y);
+
+        float       getLineLength() const;
+        void        setLineLength(float length);
+        float       getLineSpacing() const;
+        void		setLineSpacing(float spacing);
+
+        ofxFTGLTextAlignment getAlignment() const;
+        void setAlignment(ofxFTGLTextAlignment alignment);
+
+        FTSimpleLayout* layout;
 };
 

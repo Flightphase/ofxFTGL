@@ -27,7 +27,7 @@ void testApp::setup()
 //--------------------------------------------------------------
 void testApp::update()
 {
-    layoutText.setLineLength(MAX(margin * 2, ofGetMouseX() - margin * 2));
+    layoutText.setLineLength(MAX(margin * 2, ofGetMouseX() - margin));
     layoutText.setLineSpacing(ofMap(ofGetMouseY(), 0, ofGetHeight(), 0.0f, 2.0f, true));
 }
 
