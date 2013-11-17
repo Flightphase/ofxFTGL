@@ -14,7 +14,8 @@ class ofxFTGLFont
         bool isLoaded();
 
         void setSize(int size);
-
+		int getSize();
+	
         float getLineHeight() const;
         float getAscender() const;
         float getDescender() const;
@@ -24,7 +25,7 @@ class ofxFTGLFont
         virtual ofRectangle getStringBoundingBox(string s, float x, float y);
         float stringHeight(string c);
         float stringWidth(string c);
-
+		float getSpaceSize();
         virtual void drawString(wstring s, float x, float y);
         virtual void drawString(string s, float x, float y);
 

@@ -56,6 +56,10 @@ bool ofxFTGLFont::loadFont(string filename, float fontsize, float depth, bool bU
     return true;
 }
 
+float ofxFTGLFont::getSpaceSize(){
+	return stringWidth(" ");
+}
+
 float ofxFTGLFont::stringWidth(string c)
 {
     if (c.compare(" ") == 0) {
@@ -82,6 +86,10 @@ void ofxFTGLFont::setSize(int size){
     if(loaded){
 	    font->FaceSize(size);
     }
+}
+
+int ofxFTGLFont::getSize(){
+	return font->FaceSize();
 }
 
 float ofxFTGLFont::getLineHeight() const
