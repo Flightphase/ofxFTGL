@@ -84,6 +84,16 @@ void ofxFTGLFont::setSize(int size){
     }
 }
 
+void ofxFTGLFont::setTracking(float tracking)
+{
+    trackingPoint.X(tracking);
+}
+
+float ofxFTGLFont::getTracking() const
+{
+    return trackingPoint.Xf();
+}
+
 float ofxFTGLFont::getLineHeight() const
 {
     if (loaded) {
@@ -118,7 +128,7 @@ float ofxFTGLFont::getXHeight() const
 
 ofRectangle ofxFTGLFont::getStringBoundingBox(string s, float x, float y){
     if(loaded){
-    	FTBBox bbox = font->BBox(s.c_str());
+    	FTBBox bbox = font->BBox(s.c_str(), -1, FTPoint(), trackingPoint);
 	    return ofRectangle(x + bbox.Lower().Xf(), y + bbox.Lower().Yf(), bbox.Upper().Xf(), bbox.Upper().Yf());
     }
 	return ofRectangle();
@@ -126,7 +136,7 @@ ofRectangle ofxFTGLFont::getStringBoundingBox(string s, float x, float y){
 
 ofRectangle ofxFTGLFont::getStringBoundingBox(wstring s, float x, float y){
     if(loaded){
-    	FTBBox bbox = font->BBox((wchar_t*)s.c_str());
+    	FTBBox bbox = font->BBox((wchar_t*)s.c_str(), -1, FTPoint(), trackingPoint);
 	    return ofRectangle(x + bbox.Lower().Xf(), y + bbox.Lower().Yf(), bbox.Upper().Xf(), bbox.Upper().Yf());
     }
 	return ofRectangle();
@@ -137,7 +147,7 @@ void ofxFTGLFont::drawString(string s, float x, float y){
     glTranslatef(x, y, 0);
     glScalef(1,-1,1);
 
-    font->Render(s.c_str());
+    font->Render(s.c_str(), -1, FTPoint(), trackingPoint);
     glPopMatrix();
 }
 
@@ -145,6 +155,6 @@ void ofxFTGLFont::drawString(wstring s, float x, float y){
     glPushMatrix();
     glTranslatef(x, y, 0);
     glScalef(1,-1,1);
-    font->Render((wchar_t*)s.c_str());
+    font->Render((wchar_t*)s.c_str(), -1, FTPoint(), trackingPoint);
     glPopMatrix();
 }

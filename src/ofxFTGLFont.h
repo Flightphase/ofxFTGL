@@ -14,6 +14,9 @@ class ofxFTGLFont
         bool isLoaded();
 
         void setSize(int size);
+    
+        void setTracking(float tracking);
+        float getTracking() const;
 
         float getLineHeight() const;
         float getAscender() const;
@@ -32,5 +35,6 @@ class ofxFTGLFont
     
     protected:
         bool loaded;
+        FTPoint trackingPoint;
 };
 
