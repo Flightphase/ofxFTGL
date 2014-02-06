@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\testApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ofxFTGLFont.cpp">
+      <Filter>ofxFTGL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ofxFTGLSimpleLayout.cpp">
+      <Filter>ofxFTGL\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofxFTGL">
+      <UniqueIdentifier>{f7943b1a-65b5-4f05-b590-78c595cf56c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ofxFTGL\src">
+      <UniqueIdentifier>{89a14659-9f82-4d5c-abd5-a41c87157aaf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\testApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxFTGL.h">
+      <Filter>ofxFTGL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxFTGLFont.h">
+      <Filter>ofxFTGL\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxFTGLSimpleLayout.h">
+      <Filter>ofxFTGL\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>
