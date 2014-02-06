@@ -1,10 +1,4 @@
 /*
- *  ofxWordPalette
- *
- * Created by James George, http://www.jamesgeorge.org @ Flightphase http://www.flightphase.com 
- * for the National Maritime Musuem
- * requires ofxFTGL : https://github.com/Flightphase/ofxFTGL
- *
  **********************************************************
  *
  * Permission is hereby granted, free of charge, to any person
@@ -29,26 +23,23 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  *
  * ----------------------
- * ofxWordPalette lets you draw lots and lots of text efficiently by rendering
- * a set number of words once into an FBO and then drawing them as textures
+ * ofxFTGL is by Rick Companje
+ * 
+ * example and static libs by obviousjim
  *
- * ofxWordPalette also has helper functions to do fun stuff involving the length
- * of words
  */
 
 #include "ofMain.h"
 #include "testApp.h"
-#include "ofAppGlutWindow.h"
 
 //========================================================================
-int main( ){
+int main(){
 
-    ofAppGlutWindow window;
-	ofSetupOpenGL(&window, 1024,768, OF_WINDOW);			// <-------- setup the GL context
+	ofSetupOpenGL(1024,768, OF_WINDOW);
 
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
-	ofRunApp( new testApp());
+	ofRunApp(new testApp());
 
 }
