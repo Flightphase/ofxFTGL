@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F951BC717CCD0D900B4213F /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F951BB817CCD0D900B4213F /* libftgl.a */; };
-		6F951BC817CCD0D900B4213F /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F951BBA17CCD0D900B4213F /* libftgl.a */; };
 		6F951BC917CCD0D900B4213F /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F951BBD17CCD0D900B4213F /* libftgl.a */; };
-		6F951BCA17CCD0D900B4213F /* ftgl_static.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F951BBF17CCD0D900B4213F /* ftgl_static.lib */; };
 		6F951BCB17CCD0D900B4213F /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F951BC217CCD0D900B4213F /* ofxFTGLFont.cpp */; };
 		6FD7A71E17CDEB6F00CC92E0 /* ofxFTGLSimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7A71C17CDEB6F00CC92E0 /* ofxFTGLSimpleLayout.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -89,11 +86,8 @@
 		6F951BB317CCD0D900B4213F /* FTPolyGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPolyGlyph.h; sourceTree = "<group>"; };
 		6F951BB417CCD0D900B4213F /* FTSimpleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSimpleLayout.h; sourceTree = "<group>"; };
 		6F951BB517CCD0D900B4213F /* FTTextureGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTTextureGlyph.h; sourceTree = "<group>"; };
-		6F951BB817CCD0D900B4213F /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
-		6F951BBA17CCD0D900B4213F /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
 		6F951BBC17CCD0D900B4213F /* buildFTGL.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildFTGL.sh; sourceTree = "<group>"; };
 		6F951BBD17CCD0D900B4213F /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
-		6F951BBF17CCD0D900B4213F /* ftgl_static.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = ftgl_static.lib; sourceTree = "<group>"; };
 		6F951BC017CCD0D900B4213F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6F951BC217CCD0D900B4213F /* ofxFTGLFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFTGLFont.cpp; sourceTree = "<group>"; };
 		6F951BC317CCD0D900B4213F /* ofxFTGLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFTGLFont.h; sourceTree = "<group>"; };
@@ -147,10 +141,7 @@
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
-				6F951BC717CCD0D900B4213F /* libftgl.a in Frameworks */,
-				6F951BC817CCD0D900B4213F /* libftgl.a in Frameworks */,
 				6F951BC917CCD0D900B4213F /* libftgl.a in Frameworks */,
-				6F951BCA17CCD0D900B4213F /* ftgl_static.lib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,28 +216,9 @@
 		6F951BB617CCD0D900B4213F /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				6F951BB717CCD0D900B4213F /* linux */,
-				6F951BB917CCD0D900B4213F /* linux64 */,
 				6F951BBB17CCD0D900B4213F /* osx */,
-				6F951BBE17CCD0D900B4213F /* vs2010 */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		6F951BB717CCD0D900B4213F /* linux */ = {
-			isa = PBXGroup;
-			children = (
-				6F951BB817CCD0D900B4213F /* libftgl.a */,
-			);
-			path = linux;
-			sourceTree = "<group>";
-		};
-		6F951BB917CCD0D900B4213F /* linux64 */ = {
-			isa = PBXGroup;
-			children = (
-				6F951BBA17CCD0D900B4213F /* libftgl.a */,
-			);
-			path = linux64;
 			sourceTree = "<group>";
 		};
 		6F951BBB17CCD0D900B4213F /* osx */ = {
@@ -256,14 +228,6 @@
 				6F951BBD17CCD0D900B4213F /* libftgl.a */,
 			);
 			path = osx;
-			sourceTree = "<group>";
-		};
-		6F951BBE17CCD0D900B4213F /* vs2010 */ = {
-			isa = PBXGroup;
-			children = (
-				6F951BBF17CCD0D900B4213F /* ftgl_static.lib */,
-			);
-			path = vs2010;
 			sourceTree = "<group>";
 		};
 		6F951BC117CCD0D900B4213F /* src */ = {
